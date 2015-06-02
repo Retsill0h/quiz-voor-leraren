@@ -1,0 +1,8 @@
+.panel.panel-default
+  .panel-body
+    %h4= @question.body
+= link_to 'Rood', questions_path(question_id: @question.id), class: 'btn-block input-block-level form-control'
+= link_to 'Blauw', questions_path(question_id: @question.id), class: 'btn-block input-block-level form-control'
+= link_to 'Groen', questions_path(question_id: @question.id), class: 'btn-block input-block-level form-control'
+= link_to 'Geel', questions_path(question_id: @question.id), class: 'btn-block input-block-level form-control'
+= @answered
