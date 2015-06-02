@@ -1,0 +1,18 @@
+%h1 Quiz voor leraren
+
+.panel.panel-info
+	.panel-heading 
+		Alle hoofdstukken
+	%table.table.table-striped
+		%tr
+			%td ID
+			%td Body
+			%td Bewerken
+			%td Verwijderen
+		- @chapter.each do |c|
+			%tr
+				%td= c.id
+				%td= c.name
+				%td= link_to "Bewerken", edit_admin_chapter_path(c), class: "btn btn-warning"
+				%td= link_to 'Verwijderen', admin_chapter_path(c), method: :delete, data: {confirm: 'Zeker weten?'}, class: 'btn btn-danger'
+

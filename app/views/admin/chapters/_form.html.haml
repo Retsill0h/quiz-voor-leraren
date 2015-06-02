@@ -1,0 +1,8 @@
+.panel.panel-primary
+	.panel-heading Nieuw hoofdstuk toevoegen
+	.panel-body
+		= form_for chapter do |f|
+			= f.label :name, 'naam'
+			= f.text_field :name
+
+			= f.submit 'Opslaan'
