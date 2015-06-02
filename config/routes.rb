@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'admin/chapters/index'
-  root 'admin/chapters#index'
-  resources :chapters, :questions
-namespace :admin do
-    resources :chapters, :questions
-end
 
+  resources :questions
+  resources :chapters
+  namespace :admin do
+    root to: "admin/chapters#index"
+    resources :chapters
+    resources :questions
+  end
+root 'admin/chapters#index'
 end
