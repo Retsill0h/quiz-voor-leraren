@@ -3,10 +3,10 @@
 	.panel-body
 		= form_for [:admin, chapter], html: { class: "form-inline"} do |f|
 			.form-group
-				= f.label :name, 'Hoofdstuk', class: "sr-only"
+				= f.label :body, 'Hoofdstuk', class: "sr-only"
 				.input-group
 					.input-group-addon Hoofdstuk
-					= f.text_field :name, class: "form-control", placeholder: "bijv. Hoofdstuk 1"
+					= f.text_field :body, class: "form-control", placeholder: "bijv. Hoofdstuk 1"
 
 			= f.submit 'Opslaan', class: "btn btn-primary"
 
