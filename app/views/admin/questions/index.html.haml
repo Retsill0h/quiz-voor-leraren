@@ -11,3 +11,6 @@
 			%tr
 				%td= q.id
 				%td= q.body
+				%td= link_to 'Bekijk', admin_question_path(q), class: 'btn btn-success'
+				%td= link_to 'Wijzig', edit_admin_question_path(q), class: 'btn btn-warning'
+				%td= link_to 'Verwijderen', admin_question_path(q), method: :delete, data:{confirm: "Weet je het zeker?"}, class: 'btn btn-danger'
