@@ -1,0 +1,9 @@
+%table.table
+	%tr
+		%td= @question.chapter.id
+		%td= @question.chapter.body
+		%td= @question.body
+	%tr
+		- for answer in @question.answers
+			%td=h answer.body
+	%tr
