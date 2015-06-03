@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :chapters
     resources :questions
   end
-root 'admin/chapters#index'
+root 'chapters#index'
 end
