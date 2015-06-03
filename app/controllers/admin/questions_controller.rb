@@ -1,7 +1,7 @@
 class Admin::QuestionsController < ApplicationController
 	def index
 		@question = Question.all
-		@question.build_answer
+		@question.build()
 	end
 	def new
 		@question = Question.new
