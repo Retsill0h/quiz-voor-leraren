@@ -1,0 +1,13 @@
+%h3 Joost
+= link_to "Nieuwe vraag toevoegen", new_admin_question_path, class: "btn btn-primary"
+.panel.panel-info
+	.panel-heading 
+		Alle hoofdstukken
+	%table.table.table-striped
+		%tr
+			%td ID
+			%td Body
+		- @question.each do |q|
+			%tr
+				%td= q.id
+				%td= q.body
