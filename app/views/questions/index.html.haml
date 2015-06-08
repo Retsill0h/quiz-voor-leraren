@@ -1,3 +1,7 @@
-.panel.panel-default
-  .panel-body
-    %h4= @question.body
+%h4= @question.body
+%table
+	%tr
+		- for answer in @question.answers
+			%tr
+				%td
+					= link_to (answer.body), questions_path(:question_id => @question.id), class: "btn btn-default"
