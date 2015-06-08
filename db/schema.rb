@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602111624) do
+ActiveRecord::Schema.define(version: 20150608112153) do
 
-  create_table "answers", force: :cascade do |t|
+  create_table "Answers", force: :cascade do |t|
     t.text     "body"
-    t.text     "explanation"
     t.integer  "question_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150602111624) do
     t.integer  "chapter_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "explanation"
   end
 
   create_table "users", force: :cascade do |t|
