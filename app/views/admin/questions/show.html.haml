@@ -3,6 +3,7 @@
 		%td= @question.chapter.id
 		%td= @question.chapter.body
 		%td= @question.body
+		%td= Answer.find(@question.right_answer_id).body
 	%tr
 		- for answer in @question.answers
 			%td=h answer.body
