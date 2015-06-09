@@ -10,19 +10,25 @@
 		= csrf_meta_tags
   
 	%body
-		.col-md-12
-			=image_tag "QuizLogo_110-50px-72dpi.png"
+		
 		.col-sm-2
-			#menu
-				%ul.list-group
-					%li.list-group-item.list-group-item-info
-						%a Menu
-					%li.list-group-item
-						%a 
-							= link_to 'Admin Vragen overzicht', admin_questions_url
-					%li.list-group-item
-						%a 
-							= link_to 'Admin Hoofdstuk overzicht', admin_chapters_url
+			%br
+			.row
+				.col-sm-12
+					=image_tag "QuizLogo_110-50px-72dpi.png"
+			%br
+			.row
+				.col-sm-12
+					#menu
+						%ul.list-group
+							%li.list-group-item.list-group-item-info
+								%b Menu
+							%li.list-group-item
+								%a 
+									= link_to 'Vragen overzicht', admin_questions_url
+							%li.list-group-item
+								%a 
+									= link_to 'Hoofdstukken overzicht', admin_chapters_url
  
 		.col-sm-10
 

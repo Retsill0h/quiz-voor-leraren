@@ -1,4 +1,5 @@
 class Admin::QuestionsController < ApplicationController
+	before_filter :authenticate
 	def index
 		@question = Question.all
 		@question.build()

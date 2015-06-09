@@ -1,10 +1,41 @@
-%table.table
-	%tr
-		%td= @question.chapter.id
-		%td= @question.chapter.body
-		%td= @question.body
-		%td= Answer.find(@question.right_answer_id).body
-	%tr
-		- for answer in @question.answers
-			%td=h answer.body
-	%tr
+%br
+.col-md-7
+	.panel.panel-primary
+		.panel-heading 
+			%b Vraag
+		.panel-body
+			.row
+				.col-md-12
+					%b Hoofdstuk
+					.well.well-sm
+						%b= @question.chapter.body
+			.row
+				.col-md-12
+					%b Vraag
+					
+					
+					.well.well-sm
+						%b= @question.body
+
+			.row
+				.col-md-12
+					%b Mogelijke antwoorden
+					- for answer in @question.answers
+						.panel.panel-default
+							.panel-body
+								=h answer.body
+
+
+			.row
+				.col-md-12
+					%b Goede antwoord
+					%h4
+						%span.label.label-success= Answer.find(@question.right_answer_id).body
+			.row
+				.col-md-12
+					%b Toelichting
+					.alert.alert-success
+						= @question.explanation
+			.row
+				.col-md-12
+					= link_to 'Wijzig', edit_admin_question_path(params[:id]), class: 'btn btn-warning pull-right'
