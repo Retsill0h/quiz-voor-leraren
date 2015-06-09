@@ -10,5 +10,8 @@
 
 				= f.fields_for :answers do |a|
 					= render "admin/answers/answer_fields", :f => a
+
+				.form-group
+					= f.text_area :explanation, rows: "3" , class: "form-control", placeholder: "Toelichting"
 				.form-group
 				= f.submit 'Opslaan', class: "btn btn-primary"
