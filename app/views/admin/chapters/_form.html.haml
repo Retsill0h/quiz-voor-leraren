@@ -1,12 +1,12 @@
-.panel.panel-primary
-	.panel-heading Nieuw hoofdstuk toevoegen
-	.panel-body
-		= form_for [:admin, chapter], html: { class: "form-inline"} do |f|
-			.form-group
-				= f.label :body, 'Hoofdstuk', class: "sr-only"
-				.input-group
-					.input-group-addon Hoofdstuk
+%br
+.col-md-6
+	.panel.panel-primary
+		.panel-heading 
+			%b Nieuw hoofdstuk toevoegen
+		.panel-body
+			= form_for [:admin, chapter] do |f|
+				.form-group
 					= f.text_field :body, class: "form-control", placeholder: "bijv. Hoofdstuk 1"
-
-			= f.submit 'Opslaan', class: "btn btn-primary"
+				.form-group
+					= f.submit 'Opslaan', class: "btn btn-primary pull-right"
 
