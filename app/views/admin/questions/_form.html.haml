@@ -2,7 +2,7 @@
 	.panel.panel-primary
 		.panel-heading Nieuwe vraag toevoegen
 		.panel-body
-			= form_for [:admin, question]do |f|
+			= form_for [:admin, question] do |f|
 				.form-group
 					= f.collection_select(:chapter_id, Chapter.all, :id, :body, include_blank: "Kies een hoofdstuk", class: "form-control")
 				.form-group
@@ -10,4 +10,8 @@
 
 				= f.fields_for :answers do |a|
 					= render "admin/answers/answer_fields", :f => a
-				= f.submit 'Opslaan', class: "btn btn-primary"
+
+				.form-group.has-success
+					= f.text_area :explanation, rows: "3" , class: "form-control", placeholder: "Toelichting"
+				.form-group
+					= f.submit 'Opslaan', class: "btn btn-primary pull-right"
