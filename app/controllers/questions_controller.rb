@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
 	end
 
 	def submit_answer
-		@result = Result.new
+		@result = Result.new 
 		@result.question = @question
 		if @answer.id == @question.right_answer_id
 			@result.correct = true
