@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
-
+		
 	end
 
 	def submit_answer
