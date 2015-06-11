@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :chapters
   resources :results
   namespace :admin do
-    root to: "admin/chapters#index"
+    root to: "home#index"
     resources :chapters
     resources :questions
   end
-root 'admin/chapters#index'
+root 'home#index'
 end

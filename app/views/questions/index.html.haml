@@ -4,4 +4,4 @@
 		- for answer in @question.answers
 			%tr
 				%td
-					= link_to (answer.body), questions_path(:question_id => @question.id), class: "btn btn-default"
+					= link_to (answer.body), question_path(@question.anser[:id]), class: "btn btn-default"

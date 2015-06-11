@@ -1,0 +1,16 @@
+.col-md-4
+	.panel.panel-primary
+		.panel-heading 1. Hoofdscherm
+		.panel-body
+			.row
+				.nav
+					%a.pull-right Inloggen
+			.row
+				=image_tag "QuizLogo.png", class: "logo", id: "logo-frontpage"
+			.row
+				%input{type:"button" ,class: "true", id: "button-account",value:"Account aanmaken"}
+			.intro
+				Toets jou kennis over het boek 'Handboek voor Leraren'.
+			.row
+				- text = "Auteurs: \n Walter Geerts en René van Kralingen"
+				.p= find_and_preserve text.split("\n").join('<br>')
