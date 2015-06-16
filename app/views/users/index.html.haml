@@ -4,12 +4,13 @@
 		.panel-body
 			.row
 				.nav
-					%a.pull-right Inloggen
+					%a
+						=link_to "Inloggen", results_path(@results), class: "pull-right"
 			.row
-				=image_tag "QuizLogo.png", class: "logo", id: "logo-frontpage"
+				=image_tag "QuizLogo_110-50px-150dpi.png", class: "logo", id: "logo-frontpage"
 			.row
-				%input{type:"button" ,class: "true", id: "button-account",value:"Account aanmaken"}
-			.intro
+				=link_to "Account aanmaken", results_path(@results), class: "true"
+			#intro
 				Toets jou kennis over het boek 'Handboek voor Leraren'.
 			.row
 				- text = "Auteurs: \n Walter Geerts en René van Kralingen"
