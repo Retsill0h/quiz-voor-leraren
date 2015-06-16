@@ -1,5 +1,11 @@
 class QuestionsController < ApplicationController
+	before_action :set_question, only: [:submit_answer]
+
 	def index
+		@question = Question.all
+	end
+
+	def show
 		session[:answered_questions] = [] if session[:answered_questions].nil?
 
 		if params[:question_id]
@@ -8,24 +14,24 @@ class QuestionsController < ApplicationController
 		@answered = session[:answered_questions]
 
 		@question = Question.where.not(id: session[:answered_questions]).order('RANDOM()').first
-		if session[:answered_questions].length >= 2
+		if session[:answered_questions].length >= 4
+			redirect_to results_path
+		end		
+	end
+
+	def submit_answer
+		answer = Answer.find(params[:answer_id])
+		if answer.id == @question.right_answer_id
+			Result.create(correct: true, question_id: @question.id)
+			redirect_to results_path
+		else
+			Result.create(correct: false, question_id: @question.id)
 			redirect_to results_path
 		end
 	end
 
-	def show
-		
-	end
-
-	def submit_answer
-		@result = Result.new
-		@result.question = @question
-		if @answer.id == @question.right_answer_id
-			@result.correct = true
-			@result.save
-		else
-			@result.correct = false
-			@result.save
+	private
+		def set_question
+			@question = Question.find(params[:id])
 		end
-	end
 end

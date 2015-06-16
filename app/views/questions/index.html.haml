@@ -1,7 +1,15 @@
-%h4= @question.body
-%table
-	%tr
-		- for answer in @question.answers
+.panel.panel-info
+	.panel-heading 
+		%b Alle vragen
+	%table.table.table-striped
+		%tr
+			%td ID
+			%td.col-sm-2 Hoofdstuk
+			%td.col-sm-10 Vraag
+			%td.col-sm-0 Bekijk
+		- @question.each do |q|
 			%tr
-				%td
-					= link_to (answer.body), question_path(@question.anser[:id]), class: "btn btn-default"
+				%td= q.id
+				%td= q.chapter.body.first(13)
+				%td= q.body
+				%td= link_to 'Bekijk', question_path(q), class: 'btn btn-success'

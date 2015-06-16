@@ -1,0 +1,10 @@
+%h4= @question.body
+%table
+	%tr
+		- for answer in @question.answers
+			%tr
+				%td
+					= link_to (answer.body), submit_answer_path(@question, answer_id: answer.id) question_path, class: "btn btn-default"
+-# = if @answer_id == @right_answer_id
+-# 	= print "Dit is goed"
+-# end
