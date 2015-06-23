@@ -1,7 +1,14 @@
 %h4= @question.body
 %table
+	-if flash[:notice]
+		.alert.alert-success
+			= flash[:notice]
+	-if flash[:error]
+		.alert.alert-success
+			= flash[:error]
 	%tr
 		- for answer in @question.answers
 			%tr
 				%td
-					= link_to (answer.body), submit_answer_path(@question, answer_id: answer.id), class: "btn btn-default"
+
+					= link_to (answer.body), question_path(@question, answer_id: answer.id), class: "btn btn-default"
