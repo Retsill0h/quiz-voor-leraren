@@ -1,23 +1,26 @@
-%h3 Vragen overzicht
+%h1 Vragen overzicht
 = link_to "Nieuwe vraag toevoegen", new_admin_question_path, class: "btn btn-primary"
 %br
 %br
+
+-if flash[:notice]
+	.alert.alert-success
+		= flash[:notice]
 .panel.panel-info
 	.panel-heading 
 		%b Alle vragen
 	%table.table.table-striped
 		%tr
-			%td ID
 			%td.col-sm-2 Hoofdstuk
 			%td.col-sm-10 Vraag
-			%td.col-sm-0 Bekijk
-			%td.col-sm-0 Wijzig
-			%td.col-sm-0 Verwijderen
+			%td
+			%td
+			%td
 		- @question.each do |q|
 			%tr
-				%td= q.id
-				%td= q.chapter.body.first(13)
+				%td
+					%span.label.label-success= q.chapter.body.first(13)
 				%td= q.body
-				%td= link_to 'Bekijk', admin_question_path(q), class: 'btn btn-success'
+				%td= link_to 'Bekijk', admin_question_path(q), class: 'btn btn-info'
 				%td= link_to 'Wijzig', edit_admin_question_path(q), class: 'btn btn-warning'
-				%td= link_to 'Verwijderen', admin_question_path(q), method: :delete, data:{confirm: "Weet je het zeker?"}, class: 'btn btn-danger'
+				%td= link_to 'Verwijderen', admin_question_path(q), method: :delete, data:{confirm: "Weet u het zeker ?"}, class: 'btn btn-danger'

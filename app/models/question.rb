@@ -9,4 +9,5 @@ class Question < ActiveRecord::Base
 		self.right_answer_id = self.answers.first.id
 		self.save
 	end
+	validates :body, :explanation, presence: true
 end

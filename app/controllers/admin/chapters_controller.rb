@@ -9,6 +9,8 @@ class Admin::ChaptersController < ApplicationController
 
 	def create
 		chapter = Chapter.new(chapter_params)
+
+		flash[:notice] = "Het hoofdstuk is succesvol toegevoegd !"
 		chapter.save
 		redirect_to admin_chapters_path
 	end
@@ -21,6 +23,7 @@ class Admin::ChaptersController < ApplicationController
 		redirect_to admin_chapters_path
 	end
 	def destroy
+		flash[:notice] = "Het hoofdstuk is succesvol verwijderd !"
 		@chapter = Chapter.find(params[:id])
 		@chapter.destroy
 		redirect_to admin_chapters_path
