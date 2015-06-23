@@ -1,15 +1,17 @@
-.panel.panel-info
-	.panel-heading 
-		%b Alle vragen
-	%table.table.table-striped
-		%tr
-			%td ID
-			%td.col-sm-2 Hoofdstuk
-			%td.col-sm-10 Vraag
-			%td.col-sm-0 Bekijk
-		- @question.each do |q|
-			%tr
-				%td= q.id
-				%td= q.chapter.body.first(13)
-				%td= q.body
-				%td= link_to 'Bekijk', question_path(q), class: 'btn btn-success'
+.col-md-4
+	.panel.panel-primary
+		.panel-heading 4. Hoofdstuk keuze
+		.panel-body
+			.row
+				=image_tag "QuizLogo_110-50px-150dpi.png", class: "logo"
+			.row
+				=link_to "Hoofdstuk 1", root_path, class: "true"
+				-#=link_to root_path, remote: true do
+				-#	%input{:type=>"button", class: "true", value: "Hoofdstuk 1"}
+			.row
+				=link_to "Hoofdstuk 2", root_path, class: "true"
+				-#%input{:type=>"button", class: "not-available", value: "Hoofdstuk 2"}
+			.row
+				%input{:type=>"button", class: "not-available", value: "Hoofdstuk 3"}
+			.row
+				%input{:type=>"button", class: "not-available", value: "Hoofdstuk 4"}
