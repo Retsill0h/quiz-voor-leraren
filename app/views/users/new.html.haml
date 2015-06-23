@@ -1,32 +1,32 @@
 .col-md-4
 	.panel.panel-primary
-	.panel-heading 2. Account aanmaken
-	.panel-body
-		.row
-			.nav
-				%a=link_to "< home", root_path
+		.panel-heading 2. Account aanmaken
+		.panel-body
+			.row
+				.nav
+					%a=link_to "< home", root_path
 
-		.row
-			%label.item-2{:for=>"voornaam"} Voornaam
-			%label.item-2.right{:for=>"achternaam"} Achternaam
-			%input{:type=>"text", :class=>"item-2", :id=>"voornaam"}
-			%input{:type=>"text", :class=>"item-2 right", :id=>"achternaam"}
+			.row
+				%label.item-2{:for=>"voornaam"} Voornaam
+				%label.item-2.right{:for=>"achternaam"} Achternaam
+				%input{:type=>"text", :class=>"item-2", :id=>"voornaam"}
+				%input{:type=>"text", :class=>"item-2 right", :id=>"achternaam"}
 
-		.row
-			%label{:for=>"email"} Email
-			%input{:type=>"text", :id=>"email"}
-		
-		.row
-			%label{:for=>"gebruikersnaam"} Gebruikersnaam
-			%input{:type=>"text", :id=>"gebruikersnaam"}
+			.row
+				%label{:for=>"email"} Email
+				%input{:type=>"text", :id=>"email"}
+			
+			.row
+				%label{:for=>"gebruikersnaam"} Gebruikersnaam
+				%input{:type=>"text", :id=>"gebruikersnaam"}
 
-		.row
-			%label{:for=>"password"} Wachtwoord
-			%input{:type=>"password", :id=>"password"}
+			.row
+				%label{:for=>"password"} Wachtwoord
+				%input{:type=>"password", :id=>"password"}
 
-		.row
-			%label{:for=>"repeat-password"} Herhaal wachtwoord
-			%input{:type=>"password", :id=>"repeat-password"}
+			.row
+				%label{:for=>"repeat-password"} Herhaal wachtwoord
+				%input{:type=>"password", :id=>"repeat-password"}
 
-		.row
-			%input{:type=>"button", class: "true-smallest", value: "Opslaan"}
+			.row
+				%input{:type=>"button", class: "true-smallest", value: "Opslaan"}
