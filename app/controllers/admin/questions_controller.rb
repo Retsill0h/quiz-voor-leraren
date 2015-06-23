@@ -1,13 +1,6 @@
 class Admin::QuestionsController < ApplicationController
 	layout 'admin'
-  protect_from_forgery with: :exception
-  	before_filter :authenticate
-	protected
-		def authenticate
-		authenticate_or_request_with_http_basic do |username, password|
-		username == "user" && password == "user"
-		end
-	end
+  	before_filter :admin_required
 	def index
 		@question = Question.order("id desc")
 		@question.build()

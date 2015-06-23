@@ -5,14 +5,11 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
-		if(params.has_key?(:answer_id))
-
+		if params[:answer_id].present?
 			@question = Question.find(params[:id])
-			if params[:answer_id] == @question.right_answer_id
-				flash[:error] = "Je hebt het goed beantwoord !"
-			end
+			@answer = Answer.find(@question.right_answer_id)
+			@given_answer = Answer.find(params[:answer_id])
 		else
-
 			@question = Question.order('RANDOM()').first
 		end
 	end

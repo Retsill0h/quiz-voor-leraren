@@ -1,14 +1,45 @@
-%h4= @question.body
-%table
-	-if flash[:notice]
-		.alert.alert-success
-			= flash[:notice]
-	-if flash[:error]
-		.alert.alert-success
-			= flash[:error]
-	%tr
-		- for answer in @question.answers
-			%tr
-				%td
+.col-md-4
+	.panel.panel-primary
+		.panel-heading 1. Hoofdscherm
+		.panel-body
+			
+			%h4= @question.body
+			%table
 
-					= link_to (answer.body), question_path(@question, answer_id: answer.id), class: "btn btn-default"
+				- if params[:answer_id] == "#{@question.right_answer_id}"
+					
+					%b Het goede antwoord is:
+					%br
+					.alert.alert-success
+						= @answer.body
+					.alert.alert-warning
+						%b Uitleg:
+						%br
+						= @question.explanation
+
+					= link_to 'Volgende', question_path(0), class: 'btn btn-success pull-right'
+
+
+				- elsif params[:answer_id] && params[:answer_id].present? != "#{@question.right_answer_id}"
+
+					%b Het goede antwoord is:
+					%br
+					.alert.alert-success
+						= @answer.body
+					%b U gegeven antwoord:
+					%br
+					.alert.alert-danger
+						= @given_answer.body
+
+					%b Uitleg: 
+					%br
+					.alert.alert-warning
+						= @question.explanation
+
+					= link_to 'Volgende', question_path(0), class: 'btn btn-success pull-right'
+				-else
+					%tr
+						- for answer in @question.answers
+							%tr
+								%td
+									= link_to (answer.body), question_path(@question, answer_id: answer.id), class: "btn btn-default"

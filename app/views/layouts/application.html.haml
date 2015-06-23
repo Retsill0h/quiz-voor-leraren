@@ -10,21 +10,5 @@
 		= csrf_meta_tags
   
 	%body
-		
-		.col-sm-2
-			%br
-			.row
-				.col-sm-12
-					=image_tag "QuizLogo_110-50px-72dpi.png"
-			%br
-			.row
-				.col-sm-12
-					#menu
-						%ul.list-group
-							%li.list-group-item.list-group-item-info
-								%b Menu
-							%li.list-group-item
-								%a 
-									= link_to 'Home', root_url
-		.col-sm-10
+		.col-sm-12
 			= yield
