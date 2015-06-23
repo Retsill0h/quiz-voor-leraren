@@ -1,4 +1,13 @@
 class Admin::ChaptersController < ApplicationController
+	layout 'admin'
+	protect_from_forgery with: :exception
+  	before_filter :authenticate
+	protected
+		def authenticate
+		authenticate_or_request_with_http_basic do |username, password|
+		username == "user" && password == "user"
+		end
+	end
 	def index
 		@chapter = Chapter.all
 	end
