@@ -2,12 +2,18 @@
 	.panel.panel-primary
 		.panel-heading Nieuwe vraag toevoegen
 		.panel-body
+
 			= form_for [:admin, question] do |f|
+				- if @question.errors.any?
+					%ul
+						- for message in @question.errors.full_messages
+							%li= message 
+             
 				.form-group
-					= f.collection_select(:chapter_id, Chapter.all, :id, :body, include_blank: "Kies een hoofdstuk", class: "form-control")
+					= f.collection_select(:chapter_id, Chapter.all, :id, :body, class: "form-control")
 				.form-group
 					= f.text_area :body, rows: "5" , class: "form-control", placeholder: "Vraag"
-
+				%label Het eerste antwoord word als goede antwoord opgeslagen
 				= f.fields_for :answers do |a|
 					= render "admin/answers/answer_fields", :f => a
 

@@ -1,8 +1,11 @@
-%h1 Overzicht hoofdstukken
+%h1 Hoofdstukken overzicht
 = link_to "Nieuw hoofdstuk toevoegen", new_admin_chapter_path, class: "btn btn-primary"
 .row
 	.col-md-12
 		%br
+		-if flash[:notice]
+			.alert.alert-success
+				= flash[:notice]
 .panel.panel-info
 	.panel-heading 
 		%b Alle hoofdstukken

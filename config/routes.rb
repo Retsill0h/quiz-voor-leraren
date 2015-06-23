@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   get 'questions/:id/submit_answer', to: 'questions#submit_answer', as: 'submit_answer'
   resources :chapters
   resources :results
+  resources :users
   namespace :admin do
-    root to: "home#index"
+    root to: "users#index"
     resources :chapters
     resources :questions
   end
-root 'home#index'
+root 'users#index'
 end

@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
 	def submit_answer
 		answer = Answer.find(params[:answer_id])
 		if answer.id == @question.right_answer_id
-			Result.create(correct: true, question_id: @question.id)
+			Result.create(correct: true, question_id: @question.id, answer_id: answer.id)
 			redirect_to results_path
 		else
 			Result.create(correct: false, question_id: @question.id)
