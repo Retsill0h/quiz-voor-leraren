@@ -1,7 +1,7 @@
 class Admin::QuestionsController < ApplicationController
 	before_filter :authenticate
 	def index
-		@question = Question.all
+		@question = Question.order("id desc")
 		@question.build()
 	end
 	def new
@@ -16,6 +16,7 @@ class Admin::QuestionsController < ApplicationController
 		@question = Question.new(question_params)
 
 		if @question.save
+			flash[:notice] = "Uw vraag is succesvol opgeslagen !"
 			redirect_to admin_questions_path
 		else
 			render 'new'
@@ -24,8 +25,10 @@ class Admin::QuestionsController < ApplicationController
 	def update
 		@question = Question.find(params[:id])
 		if @question.update(question_params)
-			redirect_to admin_question_path
+			flash[:notice] = "De vraag is succesvol gewijzigd !"
+			redirect_to admin_questions_path
 		else
+			4.times { @question.answers.build }
 			render 'new'
 		end
 	end
@@ -35,8 +38,14 @@ class Admin::QuestionsController < ApplicationController
 	end 
 	def destroy
 		@question = Question.find(params[:id])
-		@question.destroy
+		if @question.destroy
 
+			flash[:notice] = "De vraag is succesvol verwijderd"
+			@question.destroy
+		else
+
+			flash[:notice] = "Er is iets verkeerds gegaan"
+		end
 		redirect_to admin_questions_path
 	end
 	private

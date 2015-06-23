@@ -1,25 +1,23 @@
-.col-md-6
+.col-md-4
 	.panel.panel-primary
-		.panel-heading
-			%h1 Resultaten van de Quiz
-		.panel-body
-			.row
-				.nav
-					%a=link_to "< menu", root_path
-					%h5.pull-right hoofdstuk 1 - Hoe leren leerlingen?
-			.row
-				.h4 Resultaten
-			.row
-				%input{:type=>"button", class: "false-small", value: "vraag 1"}
-				%input{:type=>"button", class: "neutral-small right", value: "vraag 2"}
-			.row
-				%input{:type=>"button", class: "neutral-small", value: "vraag 3"}
-				%input{:type=>"button", class: "neutral-small right", value: "vraag 4"}
-			.row
-				%input{:type=>"button", class: "neutral-small", value: "vraag 5"}
-				%input{:type=>"button", class: "neutral-small right", value: "vraag 6"}
-			.row
-				%input{:type=>"button", class: "neutral-small", value: "vraag 7"}
-				%input{:type=>"button", class: "neutral-small right", value: "vraag 8"}
-
-%h4= question.correct
+	.panel-heading 
+		%h1 Resultaten van de Quiz
+	.panel-body
+		.row
+			.nav
+				%a=link_to "< menu", root_path
+				%h5.pull-right hoofdstuk 1 - Hoe leren leerlingen?
+		.row
+			.h4 Resultaten
+		.row
+			%input{:type=>"button", class: "false-small", value: "vraag 1"}
+			%input{:type=>"button", class: "neutral-small right", value: "vraag 2"}
+		.row
+			%input{:type=>"button", class: "neutral-small", value: "vraag 3"}
+			%input{:type=>"button", class: "neutral-small right", value: "vraag 4"}
+		.row
+			%input{:type=>"button", class: "neutral-small", value: "vraag 5"}
+			%input{:type=>"button", class: "neutral-small right", value: "vraag 6"}
+		.row
+			%input{:type=>"button", class: "neutral-small", value: "vraag 7"}
+			%input{:type=>"button", class: "neutral-small right", value: "vraag 8"}

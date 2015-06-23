@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'questions/:id/submit_answer', to: 'questions#submit_answer', as: 'submit_answer'
   resources :chapters
   resources :results
+  resources :users
   namespace :admin do
     root to: "users#index"
     resources :chapters

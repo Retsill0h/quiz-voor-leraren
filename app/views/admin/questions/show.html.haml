@@ -1,6 +1,6 @@
 %br
 .col-md-7
-	.panel.panel-primary
+	.panel.panel-info
 		.panel-heading 
 			%b Vraag
 		.panel-body
@@ -24,8 +24,6 @@
 						.panel.panel-default
 							.panel-body
 								=h answer.body
-
-
 			.row
 				.col-md-12
 					%b Goede antwoord
@@ -39,3 +37,4 @@
 			.row
 				.col-md-12
 					= link_to 'Wijzig', edit_admin_question_path(params[:id]), class: 'btn btn-warning pull-right'
+					= link_to 'Verwijderen', admin_question_path(params[:id]), method: :delete, data:{confirm: "Weet u het zeker?"}, class: 'btn btn-danger'
