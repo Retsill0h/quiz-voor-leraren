@@ -1,4 +1,5 @@
 class Admin::ChaptersController < ApplicationController
+	layout 'admin'
 	def index
 		@chapter = Chapter.all
 	end
