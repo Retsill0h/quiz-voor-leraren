@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :results
   resources :users
   namespace :admin do
-    root to: "users#index"
+    root to: "chapters#index"
     resources :chapters
     resources :questions
   end
