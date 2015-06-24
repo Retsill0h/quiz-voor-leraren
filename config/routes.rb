@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :chapters
     resources :questions
   end
-root 'questions#index'
+root 'users#index'
 end
