@@ -1,9 +1,8 @@
-.col-md-4
+.col-md-12
 	.panel.panel-primary
-		.panel-heading 1. Hoofdscherm
 		.panel-body
 			
-			%h4= @question.body
+			.questions= @question.body
 			%table
 
 				- if params[:answer_id] == "#{@question.right_answer_id}"
@@ -40,6 +39,5 @@
 				-else
 					%tr
 						- for answer in @question.answers
-							%tr
-								%td
-									= link_to (answer.body), question_path(@question, answer_id: answer.id), class: "btn btn-default"
+							.answer		
+								= link_to (answer.body), question_path(@question, answer_id: answer.id), class: "btn btn-default"
