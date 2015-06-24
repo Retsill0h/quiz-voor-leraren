@@ -1,9 +1,0 @@
-%h4= @result.body
-= @result.body
-%table
-	%tr
-		- for answer in @result.answers
-			%tr
-				%td
-					.btn.btn-default
-						= answer.body

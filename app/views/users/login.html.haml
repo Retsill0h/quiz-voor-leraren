@@ -1,0 +1,19 @@
+.col-md-4
+	.panel.panel-primary
+		.panel-heading 3. Inloggen
+		.panel-body
+			.row
+				.nav
+					%a < home
+			.row
+				=image_tag "QuizLogo.png", class: "logo"
+			.row
+				%label{:for=>"gebruikersnaam"} Gebruikersnaam
+				%input{:type=>"text", :id=>"gebruikersnaam"}
+
+			.row
+				%label{:for=>"password"} Wachtwoord
+				%input{:type=>"password", :id=>"password"}
+
+			.row
+				%input{:type=>"button", class: "true-smallest", value: "Inloggen"}

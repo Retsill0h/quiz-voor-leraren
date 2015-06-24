@@ -1,17 +1,19 @@
 .col-md-4
 	.panel.panel-primary
-	.panel-heading 1. Hoofdscherm
-	.panel-body
-		.row
-			.nav
-				%a
-					=link_to "Inloggen", results_path(@results), class: "pull-right"
-		.row
-			=image_tag "QuizLogo_110-50px-150dpi.png", class: "logo", id: "logo-frontpage"
-		.row
-			=link_to "Account aanmaken", new_user_path, class: "true"
-		#intro
-			Toets jou kennis over het boek 'Handboek voor Leraren'.
-		.row
-			- text = "Auteurs: \n Walter Geerts en René van Kralingen"
-			.p= find_and_preserve text.split("\n").join('<br>')
+		.panel-heading 1. Hoofdscherm
+		.panel-body
+			-#.row
+			-#	.nav
+			-#		%a
+			-#			=link_to "Inloggen", chapters_path, class: "pull-right"
+			.row
+				=image_tag "QuizLogo_110-50px-150dpi.png", class: "logo", id: "logo-frontpage"
+			.row
+				=link_to "Starten", chapters_path, class: "true"
+			-#	=link_to "Account aanmaken", new_user_path, class: "true"
+				
+			#intro
+				Toets jou kennis over het boek 'Handboek voor Leraren'.
+			.row
+				- text = "Auteurs: \n Walter Geerts en René van Kralingen"
+				.p= find_and_preserve text.split("\n").join('<br>')
