@@ -1,7 +1,10 @@
 .col-md-12
 	.panel.panel-primary
 		.panel-body
-			
+			.row
+				.nav
+					%a=link_to "< menu", questions_path
+
 			.questions= @question.body
 			%table
 

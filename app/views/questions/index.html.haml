@@ -3,14 +3,16 @@
 		.panel-heading 4. Hoofdstuk keuze
 		.panel-body
 			.row
-				=image_tag "QuizLogo_110-50px-150dpi.png", class: "logo"
+				.nav
+					%a=link_to "< menu", root_path
 			.row
-				=link_to "Hoofdstuk 1", questions_path, class: "true"
-				-#=link_to root_path, remote: true do
-				-#	%input{:type=>"button", class: "true", value: "Hoofdstuk 1"}
+				=image_tag "Logo_100px.png", class: "logo"
 			.row
-				=link_to "Hoofdstuk 2", questions_path, class: "true"
-				-#%input{:type=>"button", class: "not-available", value: "Hoofdstuk 2"}
+				=link_to question_path(0) do
+					%input{:type=>"button", class: "true", value: "Hoofdstuk 1"}				
+			.row
+				=link_to question_path(0) do
+					%input{:type=>"button", class: "true", value: "Hoofdstuk 2"}
 			.row
 				%input{:type=>"button", class: "not-available", value: "Hoofdstuk 3"}
 			.row

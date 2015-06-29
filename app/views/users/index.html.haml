@@ -7,11 +7,10 @@
 			-#		%a
 			-#			=link_to "Inloggen", chapters_path, class: "pull-right"
 			.row
-				=image_tag "QuizLogo_110-50px-150dpi.png", class: "logo", id: "logo-frontpage"
+				=image_tag "Logo_100px.png", class: "logo", id: "logo-frontpage"
 			.row
-				=link_to "Starten", chapters_path, class: "true"
-			-#	=link_to "Account aanmaken", new_user_path, class: "true"
-				
+				=link_to questions_path do
+					%input{:type=>"button", class: "true", value: "Starten"}
 			#intro
 				Toets jou kennis over het boek 'Handboek voor Leraren'.
 			.row
