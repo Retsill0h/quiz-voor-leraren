@@ -1,46 +1,49 @@
 .col-md-12
-	.panel.panel-primary
-		.panel-body
-			.row
-				.nav
-					%a=link_to "< menu", questions_path
+	.panel-body
+		.row
+			.nav
+				%a=link_to "< menu", questions_path
+				=image_tag "Beeldmerk_30px.png", class: "pull-right", id: "beeldmerk"
+				#chapter-number Hoofdstuk 1
+				%br
+				#chapter-title Hoe leren leerlingen
 
-			.questions= @question.body
-			%table
+		.questions= @question.body
+		%table
 
-				- if params[:answer_id] == "#{@question.right_answer_id}"
-					
-					%b Het goede antwoord is:
+			- if params[:answer_id] == "#{@question.right_answer_id}"
+				
+				%b Het goede antwoord is:
+				%br
+				.alert.alert-success
+					= @answer.body
+				.alert.alert-warning
+					%b Uitleg:
 					%br
-					.alert.alert-success
-						= @answer.body
-					.alert.alert-warning
-						%b Uitleg:
-						%br
-						= @question.explanation
+					= @question.explanation
 
-					= link_to 'Volgende', question_path(0), class: 'btn btn-success pull-right'
+				= link_to 'Volgende', question_path(0), class: 'btn btn-success pull-right'
 
 
-				- elsif params[:answer_id] && params[:answer_id].present? != "#{@question.right_answer_id}"
+			- elsif params[:answer_id] && params[:answer_id].present? != "#{@question.right_answer_id}"
 
-					%b Het goede antwoord is:
-					%br
-					.alert.alert-success
-						= @answer.body
-					%b U gegeven antwoord:
-					%br
-					.alert.alert-danger
-						= @given_answer.body
+				%b Het goede antwoord is:
+				%br
+				.alert.alert-success
+					= @answer.body
+				%b U gegeven antwoord:
+				%br
+				.alert.alert-danger
+					= @given_answer.body
 
-					%b Uitleg: 
-					%br
-					.alert.alert-warning
-						= @question.explanation
+				%b Uitleg: 
+				%br
+				.alert.alert-warning
+					= @question.explanation
 
-					= link_to 'Volgende', question_path(0), class: 'btn btn-success pull-right'
-				-else
-					%tr
-						- @answer.each do |a|
-							.answer		
-								= link_to (a.body), question_path(@question, answer_id: a.id), class: "btn btn-default"
+				= link_to 'Volgende', question_path(0), class: 'btn btn-success pull-right'
+			-else
+				%tr
+					- @answer.each do |a|
+						.answer		
+							= link_to (a.body), question_path(@question, answer_id: a.id), class: "btn btn-default"

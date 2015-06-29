@@ -1,19 +1,32 @@
 .col-md-4
-	.panel.panel-primary
-		.panel-heading 4. Hoofdstuk keuze
-		.panel-body
-			.row
-				.nav
-					%a=link_to "< menu", root_path
-			.row
-				=image_tag "Logo_100px.png", class: "logo"
-			.row
-				=link_to question_path(0) do
-					%input{:type=>"button", class: "true", value: "Hoofdstuk 1"}				
-			.row
-				=link_to question_path(0) do
-					%input{:type=>"button", class: "true", value: "Hoofdstuk 2"}
-			.row
-				%input{:type=>"button", class: "not-available", value: "Hoofdstuk 3"}
-			.row
-				%input{:type=>"button", class: "not-available", value: "Hoofdstuk 4"}
+	.panel-body
+		.row
+			.nav
+				%a=link_to "< home", root_path
+		.row
+			=image_tag "Logo_200px.png", class: "logo"
+		.row
+			=link_to question_path(0) do
+				%input{:type=>"button", class: "true", value: "Hoofdstuk 1"}				
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 2"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 3"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 4"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 5"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 6"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 7"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 8"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 9"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 10"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 11"}
+		.row
+			%input{:type=>"button", class: "not-available", value: "Hoofdstuk 12"}

@@ -42,23 +42,42 @@ input, label
 body
 	font-family: 'Open Sans', sans-serif
 	color: #333
+	background-color: #f2f2f2
 
 #intro
+	margin: 5% 0 15%
+
 	font-size: 20px
 	text-align: center
 
+	#intro-title
+		font-weight: bold
+
 .row
-	margin: 10px
+	margin: 10px 10%
 	button
 		margin: 0px auto
 		padding: 0px auto
 
-	.true, .true-smallest, .not-available
+	#beeldmerk
+		position: relative
+		margin: 0 0 0 5px
+	
+	#chapter-number
+		float: right
+		color: $button-right-background
+		font-weight: bold
+
+	#chapter-title
+		font-style: italic
+		float: right
+
+	.true, .true-smallest, .not-available, .button-intro
 
 		background-color: $button-right-background 
 		color: $button-right-font-color
 		height: 45px
-		border-radius: 10px
+		border-radius: 5px
 		border-width: 0
 
 		font-size: 16pt
@@ -78,7 +97,7 @@ body
 
 
 	.not-available
-		background-color: white
+		background-color: transparent
 		color: gray
 
 		border-width: 2px
@@ -122,11 +141,13 @@ body
 
 
 	.logo
-		margin: 10% 0 15%
+		margin: 10% auto 15%
 		padding: 0px auto
 
-		left: 25%
-		width: 50%
+		display: block
+	
+		width: 45%
+		max-width: 200px
 		position: relative
 
 	.h4
@@ -141,7 +162,7 @@ body
 		font-weight: normal
 
 	.p
-		margin: 0 15% 5%
+		margin: 0 0 5%
 		text-align: center
 
 	a 
@@ -150,6 +171,6 @@ body
 		font-weight: bold
 		color: #333
 
-	#button-account
-		margin: 0 auto 15%
-		padding: 0 auto
+	.button-intro
+		height: 65px
+		font-size: 2em
