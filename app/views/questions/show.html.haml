@@ -38,6 +38,6 @@
 					= link_to 'Volgende', question_path(0), class: 'btn btn-success pull-right'
 				-else
 					%tr
-						- for answer in @question.answers
+						- @answer.each do |a|
 							.answer		
-								= link_to (answer.body), question_path(@question, answer_id: answer.id), class: "btn btn-default"
+								= link_to (a.body), question_path(@question, answer_id: a.id), class: "btn btn-default"

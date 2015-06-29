@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
 			@given_answer = Answer.find(params[:answer_id])
 		else
 			@question = Question.order('RANDOM()').first
+			@answer = @question.answers.shuffle
 		end
 	end
 
